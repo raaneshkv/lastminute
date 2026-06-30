@@ -247,13 +247,8 @@ export default function SignIn({ onSignIn }: SignInProps) {
                     if (!password) { setError('Please enter your password'); return; }
                     if (password.length < 6) { setError('Password must be at least 6 characters'); return; }
                     
-                    if (mode === 'signin') {
-                      // Demo Validation for existing accounts
-                      if (password !== 'demo123') {
-                        setError('Incorrect password. (Hint: use demo123 for existing accounts, or register a new one)');
-                        return;
-                      }
-                    }
+                    // Removed strict password check for hackathon demo purposes
+                    // Judges can use any password > 6 characters
 
                     setIsSubmitting(true);
                     setTimeout(() => {
